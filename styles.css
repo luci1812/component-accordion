@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap");
+body {
+  background-color: #e5e5e5;
+  box-sizing: border-box;
+  padding: 24px;
+}
+body * {
+  font-family: "Open Sans", sans-serif;
+}
+.page-width__narrow {
+  max-width: 720px;
+  margin: 48px auto;
+}
+.accordion__wrap {
+  display: block;
+  padding: 0 24px;
+  background-color: #ffffff;
+}
+.accordion__wrap:not(:last-child) {
+  margin-bottom: 20px;
+}
+.accordion__title {
+  margin: 0;
+  padding: 24px 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+  border: unset;
+  background-color: transparent;
+}
+.accordion__wrap.open .accordion__title {
+  padding-bottom: 16px;
+}
+.icon {
+  height: 24px;
+}
+.icon-close {
+  display: none;
+  opacity: 0;
+  transition: max-opacity 0.4s ease-in;
+}
+.accordion__wrap.open .icon-close {
+  display: block;
+  opacity: 1;
+}
+.accordion__wrap.open .icon-open {
+  display: none;
+}
+.accordion__body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.accordion__wrap.open .accordion__body {
+  padding-bottom: 24px;
+  opacity: 1;
+}
+.accordion__body p {
+  margin-bottom: 18px;
+}
+.accordion__body p:last-child {
+  margin-bottom: 0;
+}
+.accordion__body p:first-of-type {
+  margin-top: 0;
+}
